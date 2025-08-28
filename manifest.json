@@ -1,0 +1,29 @@
+{
+    "name": "2ndstreet 最速版",
+    "version": "1.2",
+    "manifest_version": 3,
+    "description": "2ndstreet自動商品購入。chrome && firefox",
+    "permissions": [
+      "activeTab",
+      "webRequest",
+      "storage",
+      "tabs",
+      "cookies"
+    ],
+    "content_scripts": [
+      {
+          "matches": [
+            "https://www.2ndstreet.jp/*",
+            "https://cdn2.2ndstreet.jp/*",
+            "http://*/*",
+            "https://*/*",
+            "<all_urls>"
+          ],
+          "js": [
+            "contentScript.js"
+          ],
+          "all_frames": true,
+          "run_at": "document_start"
+      }
+    ]
+  }
